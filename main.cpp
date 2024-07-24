@@ -44,7 +44,7 @@ int findIndex(vector <string> vec,string target) {
 }
 
 
-void createAccount(vector <string> user_name,vector <int> user_account) {
+void createAccount(vector<string>& user_name, vector<int>& user_account) {
     string  userName;
     int userAccountAmount;
     cout << "-----------------------\nCREATING NEW ACCOUNT\n";
@@ -66,14 +66,14 @@ void createAccount(vector <string> user_name,vector <int> user_account) {
    if (userID == -1) {
     user_name.push_back(userName);
     user_account.push_back(userAccountAmount);
-    userID = user_name.size(); //index of newly added user to access in future
+    userID = user_name.size()-1; //index of newly added user to access in future
    };
 
     cout << "Your account has been created\n User ID: " << userID << "\nUser Name: " << userName << "\nAccount Amount: " << userAccountAmount << "\nPlease remeber your user id for accessing your account!\n-----------------------"; 
 
 };
 
-void findUser(int userID,vector <string> user_name,vector <int> user_account) {
+void findUser(int userID, const vector<string>& user_name, const vector<int>& user_account) {
     if (userID >= 0 && userID < user_name.size()) {
         cout << "User ID: " << userID << "\nUser Name: " << user_name[userID] << "\nBalance: " << user_account[userID] << "\n-----------------------" << endl;
     } else {
